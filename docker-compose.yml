@@ -2,12 +2,10 @@ version: "3"
 
 services:
   strapi:
-    build:
-      context: ./app
-      dockerfile: ../dockerfile
+    build: .
     image: strapi:v4.11.5
     restart: always
-    env_file: app/.env
+    env_file: .env
     environment:
       DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: strapiDB
@@ -36,7 +34,7 @@ services:
   strapiDB:
     platform: linux/amd64 #for platform error on Apple M1 chips
     restart: unless-stopped
-    env_file: app/.env
+    env_file: .env
     image: postgres:15.3-alpine
     environment:
       POSTGRES_USER: ${DATABASE_USERNAME}
