@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "create-strapi-app": "4.11.5",
+    "yarn": "^1.22.19"
+  },
+  "scripts": {
+    "app": "./app.sh"
+  }
+}
