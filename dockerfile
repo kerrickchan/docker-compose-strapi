@@ -7,6 +7,8 @@ ENV NODE_ENV=${NODE_ENV}
 WORKDIR /opt/
 COPY package.json yarn.lock ./
 RUN yarn global add node-gyp
+# Fix for esbuild in Mac x86_64
+RUN yarn global add esbuild
 RUN yarn config set network-timeout 600000 -g && yarn install
 ENV PATH /opt/node_modules/.bin:$PATH
 
