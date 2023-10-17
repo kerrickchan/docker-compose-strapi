@@ -4,7 +4,7 @@ name: strapi
 services:
   strapi:
     build: .
-    image: strapi:v4.14.4
+    image: strapi:v4.12.7
     restart: unless-stopped
     env_file: .env
     environment:
