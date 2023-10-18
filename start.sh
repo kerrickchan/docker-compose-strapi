@@ -1,0 +1,2 @@
+cd strapi
+bun develop

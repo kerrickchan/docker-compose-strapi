@@ -4,14 +4,20 @@ name: strapi
 services:
   postgres:
     extends:
-      file: strapi/docker-compose-postgres.yml
+      file: docker-compose-postgres.yml
       service: postgres
+    environment:
+      POSTGRES_DB: strapi
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+    ports:
+      - 5432:5432
     networks:
       - strapi
 
   adminer:
     extends:
-      file: strapi/docker-compose-postgres.yml
+      file: docker-compose-postgres.yml
       service: adminer
     networks:
       - strapi
